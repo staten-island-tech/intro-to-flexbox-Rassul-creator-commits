@@ -94,3 +94,11 @@ function inject(item) {
   container. insertAdjacentHTML("afterbegin", `<h1>${name, price, quanitity}</h1>`) 
 }
 inject(fruits[0]);
+
+function addtoCart (){
+    const buttons = document.querySelectorAll("button");
+    // create array if we need more than forEach
+    const btnArray = Array.from(buttons);
+    btnArray = Array.from(buttons);
+        btn
+}
