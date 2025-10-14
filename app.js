@@ -91,14 +91,20 @@ const fruits = [
 ];
 function inject(item) {
   const container = document.queryselector(".container");
-  container. insertAdjacentHTML("afterbegin", `<h1>${name, price, quanitity}</h1>`) 
+  container. insertAdjacentHTML("afterbegin", `<h1>${name}</h1>`);
 }
 inject(fruits[0]);
 
-function addtoCart (){
+function addtoCart() {
     const buttons = document.querySelectorAll("button");
     // create array if we need more than forEach
-    const btnArray = Array.from(buttons);
-    btnArray = Array.from(buttons);
-        btn
+    const btnArray = Array.from(fruits);
+    btnArray.forEach((btn) => 
+        btn.addEventListener("click",function (event){
+            console.log(event.target.textContent);
+            console.log(
+                event.target.closest(".display-card").getAttribute("data-title")
+            );
+        })
 }
+addtoCart();
