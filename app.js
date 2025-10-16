@@ -90,7 +90,7 @@ const fruits = [
     },
 ];
 function inject(item) {
-  const container = document.queryselector(".container");
+  const container = document.querySelector(".fruits");
   container. insertAdjacentHTML("afterbegin", `<h1>${name}</h1>`);
 }
 inject(fruits[0]);
@@ -106,5 +106,5 @@ function addtoCart() {
                 event.target.closest(".display-card").getAttribute("data-title")
             );
         })
-}
+    }
 addtoCart();
