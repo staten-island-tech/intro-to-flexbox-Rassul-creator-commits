@@ -91,7 +91,7 @@ const fruits = [
 ];
 function inject(item) {
   const container = document.querySelector(".fruits");
-  container. insertAdjacentHTML("afterbegin", `<h1>${name}</h1>`);
+  container. insertAdjacentHTML("afterbegin", `<h1>${item.name}</h1>`);
 }
 inject(fruits[0]);
 
