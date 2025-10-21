@@ -1,6 +1,6 @@
 const fruits = [
      {
-        name: "strawberry",
+        fruit: "strawberry",
         price: 5,
         quantity: 20,
         inStock: true,
@@ -9,7 +9,7 @@ const fruits = [
 
     },
     {
-        name: "Melon",
+        fruit: "Melon",
         price: 3,
         quantity: 20,
         inStock: true,
@@ -17,7 +17,7 @@ const fruits = [
         alt: "Melon",
     },
     {
-        name: "Watermelon",
+        fruit: "Watermelon",
         price: 4,
         quantity: 20,
         inStock: true,
@@ -25,7 +25,7 @@ const fruits = [
         alt: "Watermelon",
     },
     {
-        name: "Kiwi",
+        fruit: "Kiwi",
         price: 5,
         quantity: 20,
         inStock: true,
@@ -33,7 +33,7 @@ const fruits = [
         alt: "Kiwi",
     },
     {
-        name: "Apple",
+        fruit: "Apple",
         price: 6,
         quantity: 20,
         inStock: true,
@@ -41,7 +41,7 @@ const fruits = [
         alt: "apple",
     },
     {
-        name: "Blackberry",
+        fruit: "Blackberry",
         price: 7,
         quantity: 20,
         inStock: true,
@@ -49,7 +49,7 @@ const fruits = [
         alt: "Blackberry",
     },
     {
-        name: "Raspberry",
+        fruit: "Raspberry",
         price: 8,
         quantity: 20,
         inStock: true,
@@ -57,7 +57,7 @@ const fruits = [
         alt: "Raspberry",
     },
     {
-        name: "Mango",
+        fruit: "Mango",
         price: 9,
         quantity: 20,
         inStock: true,
@@ -65,7 +65,7 @@ const fruits = [
         alt: "mango",
     },
     {
-        name: "Pomegranate",
+        fruit: "Pomegranate",
         price: 10,
         quantity: 20,
         inStock: true,
@@ -73,7 +73,7 @@ const fruits = [
         alt: "Pomegranate",
     },
     {
-        name: "Peach",
+        fruit: "Peach",
         price: 11,
         quantity: 20,
         inStock: true,
@@ -81,7 +81,7 @@ const fruits = [
         alt: "Peach",
     },
     {
-        name: "Persimmon",
+        fruit: "Persimmon",
         price: 12,
         quantity: 20,
         inStock: true,
@@ -90,15 +90,15 @@ const fruits = [
     },
 ];
 function inject(item) {
-  const container = document.querySelector(".fruits");
-  container. insertAdjacentHTML("afterbegin", `<h1>${item.name}</h1>`);
+  const container = document.querySelector(".fruit");
+  container. insertAdjacentHTML("afterbegin", `<h1>${item.fruit}</h1>`);
 }
 inject(fruits[0]);
 
 function addtoCart() {
     const buttons = document.querySelectorAll("button");
     // create array if we need more than forEach
-    const btnArray = Array.from(fruits);
+    const btnArray = Array.from(buttons);
     btnArray.forEach((btn) => 
         btn.addEventListener("click",function (event){
             console.log(event.target.textContent);
@@ -106,5 +106,6 @@ function addtoCart() {
                 event.target.closest(".display-card").getAttribute("data-title")
             );
         })
-    }
+    );
+}
 addtoCart();
