@@ -89,11 +89,24 @@ const fruits = [
         alt: "Persimmon",
     },
 ];
-function inject(item) {
-  const container = document.querySelector(".fruit");
-  container. insertAdjacentHTML("afterbegin", `<h1>${item.fruit}</h1>`);
+function injectAllItems(fruistArray) {
+    const container = document.querySelector(".card");
+
+    fruitsArray.forEach((item) => {
+        container.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div clas="display-card" data-title="${item.fruit}">
+            <img src ="{item.img}" alt="{item.alt}" width="150" />
+            <h2>${item.fruit}</h2>
+            <p>Price: $${item.price} </p>
+            <p>Quanitity: ${item.quanity}</p>
+            <button>Add to Cart</button>
+            </div>
+            `
+        );
+    });
 }
-inject(fruits[0]);
 
 function addtoCart() {
     const buttons = document.querySelectorAll("button");
