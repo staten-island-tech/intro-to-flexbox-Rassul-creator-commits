@@ -90,11 +90,11 @@ const fruits = [
     },
 ];
 function injectAllItems(fruistArray) {
-    const container = .querySelector(".card");
+    const container = document.querySelector(".card");
     if(!container){
         return;
     }
-
+const fruitsArray = fruits.map(fruits.fruit);
     fruitsArray.forEach((item) => {
         container.insertAdjacentHTML(
             "beforeend",
@@ -113,12 +113,12 @@ function injectAllItems(fruistArray) {
 injectAllItems(fruits);
 
 function addtoCart() {
-    const buttons = Document.querySelectorAll(".display-card button");
+    const buttons = document.querySelectorAll(".display-card button");
     // create array if we need more than forEach
-    const btnArray = Array.from(buttons);
+    const btnArray = from(buttons);
     btnArray.forEach((btn) => 
         btn.addEventListener("click",function (event){
-            const fruitCard = event.target.clsoest(".display-card");
+            const fruitCard = event.target.closest(".display-card");
             const fruitName = fruitCard?.getAttributes("data-title");
             console.log("Button clicked:", event.target.textContent);
             console.log("Fruit:", fruitName);
@@ -126,4 +126,4 @@ function addtoCart() {
     );
 }
 injectAllItems(fruits);
-addtoCart();
+addtoCart();              
