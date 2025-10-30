@@ -87,19 +87,23 @@ const fruits = [
     img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG9eGozcGXl_Sbv75ih7v9kIWDarLWVRikFHDTm97TUP4SO3vdQt5hkyQUcbRm0JMoAXOh3zLfrchJp58JsCPBD4kri-llpYSw17q2Y847UuLbbtYcr9rdTIu_49buwqTAWGfZakVktUI/s1600/04persimmon_sm.png",
     alt: "Persimmon",
   },
+  {
+    fruit: "Pineapple",
+    price: 13,
+    quantity: 20,
+    inStock: false,
+    img: "https://asian-veggies.com/cdn/shop/products/71_qAJehpkL.jpg?v=1668222481",
+    alt: "Pineapple",
+  },
 ];
-function injectAllItems(fruits) {
-  const container = document.querySelector(".card");
-  if (!container) {
-    console.log("no work");
-  }
-  const fruitsArray = fruits.map((item) => item.fruit);
-  fruitsArray.forEach((item) => {
+function inject() {
+  const container = document.querySelector(".container");
+  fruits.forEach((item) => {
     container.insertAdjacentHTML(
       "beforeend",
       `
         <div class="display-card" data-title="${item.fruit}">
-            <img src="{item.img}" alt="{item.alt}" width="150" />
+            <img src="${item.img}" alt="${item.alt}" width="150" />
             <h2>${item.fruit}</h2>
             <p>Price: ${item.price} </p>
             <p>Quanitity: ${item.quantity}</p>
@@ -122,8 +126,8 @@ function addtoCart() {
     })
   );
   let totalPrice = 0;
-  fruitsArray.forEach((button) => (totalPrice = totalPrice + price));
+  fruits.forEach((button) => (totalPrice = totalPrice + price));
   console.log(totalPrice);
 }
-injectAllItems(fruits);
+inject();
 addtoCart();
