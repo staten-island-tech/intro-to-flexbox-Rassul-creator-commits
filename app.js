@@ -113,7 +113,7 @@ function inject() {
     );
   });
 }
-
+let TotalPrice = 0;
 function addtoCart() {
   const buttons = document.querySelectorAll(".display-card button");
   const btnArray = buttons;
@@ -123,11 +123,16 @@ function addtoCart() {
       const fruitName = fruitCard?.getAttribute("data-title");
       console.log("Button clicked:", event.target.textContent);
       console.log("Fruit:", fruitName);
+      const fruitPrice = fruitCard?.getAttribute("price");
+      TotalPrice = TotalPrice + fruitPrice;
+      "beforeend",
+        `
+        <div class="TotalPriceCart" data-title=".getAttribute${TotalPrice}}>
+        
+        </div>
+          `;
     })
   );
-  let totalPrice = 0;
-  fruits.forEach((button) => (totalPrice = totalPrice + price));
-  console.log(totalPrice);
 }
 inject();
 addtoCart();
